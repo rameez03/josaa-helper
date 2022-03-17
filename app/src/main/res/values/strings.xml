@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Josaa Helper</string>
+    <string name="app_name">JoSAA Helper</string>
     <string-array name="categories">
         <item>Open</item>
         <item>EWS</item>
