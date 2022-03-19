@@ -10,14 +10,12 @@
         <entry key="..\:/Users/Rameez/AndroidStudioProjects/JosaaHelper/app/src/main/res/layout/content_college_inputs.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Rameez/AndroidStudioProjects/JosaaHelper/app/src/main/res/layout/fragment_first.xml" value="0.2" />
         <entry key="..\:/Users/Rameez/AndroidStudioProjects/JosaaHelper/app/src/main/res/layout/fragment_second.xml" value="0.21784420289855072" />
-        <entry key="..\:/Users/moham/AndroidStudioProjects/josaa-helper/app/src/main/res/layout/activity_college_inputs.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/moham/AndroidStudioProjects/josaa-helper/app/src/main/res/layout/activity_college_outputs.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/moham/AndroidStudioProjects/josaa-helper/app/src/main/res/layout/activity_college_outputs_final.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/moham/AndroidStudioProjects/josaa-helper/app/src/main/res/layout/activity_rank_inputs.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/USER/Desktop/josaa-helper/app/src/main/res/layout/activity_college_outputs_final.xml" value="0.22" />
+        <entry key="..\:/Users/USER/Desktop/josaa-helper/app/src/main/res/layout/activity_rank_outputs.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
