@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/collegePridictorFirstFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ABD6CF"
+    tools:context=".CollegePridictorFirstFragment">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="411dp"
+       android:layout_height="731dp"
+       android:layout_gravity="center">
+
+      <TextView
+          android:id="@+id/textExamType"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="40dp"
+          android:layout_marginBottom="7dp"
+          android:text="Choose Exam Type"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"
+          app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <RadioGroup
+          android:id="@+id/radioGroup"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="33dp"
+          android:layout_marginBottom="61dp"
+          app:layout_constraintBottom_toTopOf="@+id/textRank"
+          app:layout_constraintEnd_toEndOf="@+id/textExamType"
+          app:layout_constraintTop_toBottomOf="@+id/textExamType">
+
+         <RadioButton
+             android:id="@+id/jeemainsbtn"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="JEE Mains" />
+
+         <RadioButton
+             android:id="@+id/jeeadvancedbnt"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="JEE Advanced" />
+      </RadioGroup>
+
+
+      <TextView
+          android:id="@+id/textRank"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Enter Your Rank"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"
+          app:layout_constraintBottom_toTopOf="@+id/editTextRank"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+          app:layout_constraintVertical_bias="0.606"
+          tools:layout_editor_absoluteX="133dp" />
+
+      <EditText
+          android:id="@+id/editTextRank"
+          android:layout_width="93dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="32dp"
+          android:ems="10"
+          android:hint="Rank"
+          android:inputType="number"
+          android:minHeight="48dp"
+          app:layout_constraintBottom_toTopOf="@+id/textcategory"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.544"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textRank" />
+
+      <TextView
+          android:id="@+id/textcategory"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="10dp"
+          android:text="Choose Category"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"
+          app:layout_constraintBottom_toTopOf="@+id/categoryspinner"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editTextRank" />
+
+      <Spinner
+          android:id="@+id/categoryspinner"
+          android:layout_width="145dp"
+          android:layout_height="48dp"
+          android:layout_marginTop="10dp"
+          android:spinnerMode="dropdown"
+          app:layout_constraintBottom_toTopOf="@+id/guideline3"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textcategory"
+          tools:ignore="SpeakableTextPresentCheck" />
+
+      <Button
+          android:id="@+id/firstfragbtn"
+          style="@style/Widget.MaterialComponents.Button.TextButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="44dp"
+          android:layout_marginBottom="120dp"
+          android:text="Next"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/guideline3"
+          app:layout_constraintVertical_bias="1.0" />
+
+      <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layout_constraintGuide_begin="512dp" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
