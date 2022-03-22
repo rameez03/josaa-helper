@@ -1,40 +1,66 @@
 <resources>
-    <string name="app_name">JoSAA Helper</string>
+    <string name="app_name">Chance of College</string>
+    <string name = "cse">Computer Science and Engineering</string>
+    <string name="ce">Civil Engineering</string>
+    <string name="ee">Electrical Engineering</string>
+    <string name="ece">Electronics and Communication Engineering</string>
+    <string name="me">Mechanical Engineering</string>
+    <string name="ae">Aerospace Engineering</string>
+    <string name="che">Chemical Engineering</string>
+    <string name="bt">Bio Technology</string>
+    <string name="it">Information Technology</string>
+    <string name="btbe">Biotechnology and Biochemical Engineering</string>
+    <string name="aiads">Artificial Intelligence and Data Science</string>
+
+    <string name="open">OPEN</string>
+    <string name="ews">EWS</string>
+    <string name="obcncl">OBC-NCL</string>
+    <string name="sc">SC</string>
+    <string name="st">ST</string>
+
+    <string name="ai">AI</string>
+    <string name="hs">HS</string>
+    <string name="os">OS</string>
+
+    <string name="neutral">Neutral</string>
+    <string name="female">Female</string>
+
+    <string name="jeemains">Jee Mains</string>
+    <string name="jeeadvance">Jee Advance</string>
+
+
+
     <string-array name="categories">
-        <item>OPEN</item>
-        <item>EWS</item>
-        <item>OBC-NCL</item>
-        <item>SC</item>
-        <item>ST</item>
+        <item>@string/open</item>
+        <item>@string/ews</item>
+        <item>@string/obcncl</item>
+        <item>@string/sc</item>
+        <item>@string/st</item>
     </string-array>
 
     <string-array name="branch">
-        <item>Civil Engineering</item>
-        <item>Computer Science and Engineering</item>
-        <item>Electrical Engineering</item>
-        <item>Electronics and Communication Engineering</item>
-        <item>Mechanical Engineering</item>
-        <item>Metallurgical and Materials Engineering</item>
-        <item>Aerospace Engineering</item>
-        <item>Chemical Engineering</item>
-        <item>Agricultural and Food Engineering</item>
-        <item>Artificial Intelligence and Data Science</item>
-        <item>Bio Technology</item>
-        <item>Information Technology</item>
-        <item>Industrial and Production Engineering</item>
-        <item>Biotechnology and Biochemical Engineering</item>
+        <item>@string/ce</item>
+        <item>@string/cse</item>
+        <item>@string/ee</item>
+        <item>@string/ece</item>
+        <item>@string/me</item>
+        <item>@string/ae</item>
+        <item>@string/che</item>
+        <item>@string/aiads</item>
+        <item>@string/bt</item>
+        <item>@string/it</item>
+        <item>@string/btbe</item>
     </string-array>
 
     <string-array name="quota">
-        <item>AI</item>
-        <item>HM</item>
-        <item>OS</item>
+        <item>@string/ai</item>
+        <item>@string/hs</item>
+        <item>@string/os</item>
     </string-array>
 
     <string-array name="Gender">
-        <item>Neutral</item>
-        <item>Male</item>
-        <item>Female</item>
+        <item>@string/neutral</item>
+        <item>@string/female</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -43,4 +69,5 @@
     <string name="branch">Branch</string>
     <string name="exam">Exam</string>
     <string name="gender">Gender</string>
+    <string name="quota">Quota</string>
 </resources>
