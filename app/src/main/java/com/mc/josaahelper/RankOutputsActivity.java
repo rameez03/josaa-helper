@@ -8,7 +8,7 @@ import android.widget.TextView;
 public class RankOutputsActivity extends AppCompatActivity {
     private String mExamType, mCategory;
     private int mMarks, mintcategory;
-    private TextView mExamTV, mCategoryTV, mMarksTV, mOpenMarksTV, mObcMarksTV, mSCMarksTV, mSTMarksTV, mEWSMarksTV;
+    private TextView mExamTV, mCategoryTV, mMarksTV, mOpenMarksTV, mCategoryMarksTV, mObcMarksTV, mSCMarksTV, mSTMarksTV, mEWSMarksTV;
     private int mObcRank, mScRank, mSTRank, mEwsRank;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class RankOutputsActivity extends AppCompatActivity {
         mExamTV = findViewById(R.id.textView11);
         mCategoryTV = findViewById(R.id.textView12);
         mMarksTV = findViewById(R.id.textView13);
+        mCategoryMarksTV = findViewById(R.id.textView18);
 
         mExamTV.setText(mExamType);
         mCategoryTV.setText(mCategory);
@@ -39,31 +40,30 @@ public class RankOutputsActivity extends AppCompatActivity {
         int MYRANK = myrank.calculated_Rank(mMarks);
         mOpenMarksTV = findViewById(R.id.textView17);
         mOpenMarksTV.setText(String.valueOf(MYRANK));
+        if(mCategory.equals("OPEN")){
+            mCategoryMarksTV.setText("-");
+        }
         CategoryRankCalculation rankCalculation = new CategoryRankCalculation();
         if(mCategory.equals("OBC-NCL")){
             mObcRank = rankCalculation.calculateObcRank(MYRANK);
-            mObcMarksTV = findViewById(R.id.textView18);
-            mObcMarksTV.setText(String.valueOf(mObcRank));
+            mCategoryMarksTV.setText(String.valueOf(mObcRank));
         }
         else if(mCategory.equals("SC")){
 
             mScRank = rankCalculation.calculateSCRank(MYRANK);
-            mSCMarksTV = findViewById(R.id.textView18);
-            mSCMarksTV.setText(String.valueOf(mScRank));
+            mCategoryMarksTV.setText(String.valueOf(mScRank));
 
         }
         else if(mCategory.equals("ST")){
 
             mSTRank = rankCalculation.calculateStRank(MYRANK);
-            mSTMarksTV = findViewById(R.id.textView18);
-            mSTMarksTV.setText(String.valueOf(mSTRank));
+            mCategoryMarksTV.setText(String.valueOf(mSTRank));
 
         }
         else if(mCategory.equals("EWS")){
 
             mEwsRank = rankCalculation.calculateEwsRank(MYRANK);
-            mEWSMarksTV = findViewById(R.id.textView18);
-            mEWSMarksTV.setText(String.valueOf(mEwsRank));
+            mCategoryMarksTV.setText(String.valueOf(mEwsRank));
 
         }
     }
