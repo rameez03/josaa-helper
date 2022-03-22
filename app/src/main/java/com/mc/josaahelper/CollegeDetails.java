@@ -8,13 +8,7 @@ public class CollegeDetails {
     private String gender,quota;
     private int openrank,closerank;
 
-    public String getQuota() {
-        return quota;
-    }
 
-    public void setQuota(String quota) {
-        this.quota = quota;
-    }
 
     public CollegeDetails() {
 
@@ -28,6 +22,14 @@ public class CollegeDetails {
         this.openrank=openrank;
         this.closerank = closerank;
         this.gender = gender;
+        this.quota = quota;
+    }
+
+    public String getQuota() {
+        return quota;
+    }
+
+    public void setQuota(String quota) {
         this.quota = quota;
     }
 
