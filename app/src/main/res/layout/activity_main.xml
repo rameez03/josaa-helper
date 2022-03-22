@@ -118,21 +118,4 @@
 
     </GridLayout>
 
-
-<!--        <Button-->
-<!--            android:id="@+id/button"-->
-<!--            android:layout_width="130dp"-->
-<!--            android:layout_height="80dp"-->
-<!--            android:text="Rank Predictor"-->
-<!--            tools:layout_editor_absoluteX="141dp"-->
-<!--            tools:layout_editor_absoluteY="320dp" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button2"-->
-<!--            android:layout_width="130dp"-->
-<!--            android:layout_height="80dp"-->
-<!--            android:text="College Predictor"-->
-<!--            tools:layout_editor_absoluteX="141dp"-->
-<!--            tools:layout_editor_absoluteY="440dp" />-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>
