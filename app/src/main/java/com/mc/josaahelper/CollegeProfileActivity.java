@@ -34,11 +34,10 @@ public class CollegeProfileActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
         mCollegeList = new ArrayList<>();
-        showData();
-        mCollegeProfileAdapter = new CollegeProfileAdapter(this , mCollegeList);
+        mCollegeProfileAdapter = new CollegeProfileAdapter(this, mCollegeList);
         mRecyclerView.setAdapter(mCollegeProfileAdapter);
-        
 
+        showData();
     }
 
     private void showData() {

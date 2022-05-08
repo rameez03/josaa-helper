@@ -1,28 +1,28 @@
 package com.mc.josaahelper;
 
 public class CollegeModel {
-    String InstituteID, InstituteName;
+    String sNo, instituteCodeAndName;
 
     public CollegeModel(){}
 
-    public CollegeModel(String InstituteID, String InstituteName){
-        this.InstituteID = InstituteID;
-        this.InstituteName = InstituteName;
+    public CollegeModel(String sNo, String instituteCodeAndName){
+        this.sNo = sNo;
+        this.instituteCodeAndName = instituteCodeAndName;
     }
 
-    public String getInstituteID() {
-        return InstituteID;
+    public String getsNo() {
+        return sNo;
     }
 
-    public void setInstituteID(String instituteID) {
-        InstituteID = instituteID;
+    public void setsNo(String sNo) {
+        this.sNo = sNo;
     }
 
-    public String getInstituteName() {
-        return InstituteName;
+    public String getInstituteCodeAndName() {
+        return instituteCodeAndName;
     }
 
-    public void setInstituteName(String instituteName) {
-        InstituteName = instituteName;
+    public void setInstituteCodeAndName(String instituteCodeAndName) {
+        this.instituteCodeAndName = instituteCodeAndName;
     }
 }
