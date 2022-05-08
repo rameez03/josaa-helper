@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JosaaHelper">
         <activity
-            android:name=".CollegeProfileOutput"
+            android:name=".CollegeProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".CollegeProfileInput"
+            android:name=".CollegeProfileOutput"
             android:exported="false" />
         <activity
             android:name=".CollegeOutputsActivity"

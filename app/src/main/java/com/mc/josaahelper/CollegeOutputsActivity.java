@@ -9,6 +9,8 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -19,6 +21,8 @@ public class CollegeOutputsActivity extends AppCompatActivity {
     private ArrayList<CollegeDetails>coDetails = new ArrayList<>();
     private CollegeAdapter collegeAdapter;
     private Bundle bundle;
+    private FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
