@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "579799045956",
+    "project_id": "josahelper",
+    "storage_bucket": "josahelper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579799045956:android:cb132748e8362e06d6e911",
+        "android_client_info": {
+          "package_name": "com.mc.josaahelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579799045956-6bcrntvo3983s51qarthhm3nho7vljql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbcrVckt63B7kCMoylgFNEXvx-YqWMI4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579799045956-6bcrntvo3983s51qarthhm3nho7vljql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

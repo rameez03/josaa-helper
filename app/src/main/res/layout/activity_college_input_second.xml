@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/collegeinput"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo4"
+    tools:context=".CollegeInputSecond">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingClass">
+
+        <TextView
+            android:id="@+id/textselectBranch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:text="Select Your Branch"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/branchSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/textselectBranch"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="@+id/textselectBranch"
+            app:layout_constraintTop_toBottomOf="@+id/textselectBranch" />
+
+        <TextView
+            android:id="@+id/textselectQuota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Select Your Quota"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/branchSpinner"
+            app:layout_constraintHorizontal_bias="0.442"
+            app:layout_constraintStart_toStartOf="@+id/branchSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/branchSpinner" />
+
+        <Spinner
+            android:id="@+id/quotaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="20dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/textselectQuota"
+            app:layout_constraintHorizontal_bias="0.442"
+            app:layout_constraintStart_toStartOf="@+id/textselectQuota"
+            app:layout_constraintTop_toBottomOf="@+id/textselectQuota" />
+
+        <TextView
+            android:id="@+id/textselectGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Select Your Gender"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/quotaSpinner"
+            app:layout_constraintHorizontal_bias="0.575"
+            app:layout_constraintStart_toStartOf="@+id/quotaSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/quotaSpinner" />
+
+        <Spinner
+            android:id="@+id/genderSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="20dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@id/textselectGender"
+            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintStart_toStartOf="@id/textselectGender"
+            app:layout_constraintTop_toBottomOf="@+id/textselectGender" />
+
+        <Button
+            android:id="@+id/fragmentsecondnextbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Predict College"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/genderSpinner"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="@+id/genderSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/genderSpinner"
+            app:layout_constraintVertical_bias="0.39" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

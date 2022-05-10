@@ -5,125 +5,171 @@
     android:id="@+id/collegePridictorFirstPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ABD6CF"
+    android:background="@drawable/logo4"
     tools:context=".RankInputsActivity">
 
-    <TextView
-        android:id="@+id/textExamType"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="7dp"
-        android:text="Choose Exam Type"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:id="@+id/inplace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <GridLayout
+        android:id="@+id/gridLayout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="61dp"
-        app:layout_constraintBottom_toTopOf="@+id/textRank"
-        app:layout_constraintEnd_toEndOf="@+id/textExamType"
-        app:layout_constraintTop_toBottomOf="@+id/textExamType">
-
-        <RadioButton
-            android:id="@+id/jeemainsbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="JEE Mains"
-            android:onClick="onRadioBtnClicked"/>
-
-        <RadioButton
-            android:id="@+id/jeeadvancedbnt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="JEE Advanced"
-            android:onClick="onRadioBtnClicked"/>
-    </RadioGroup>
-
-
-    <TextView
-        android:id="@+id/textRank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter Your Rank"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/editTextRank"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.606"
-        tools:layout_editor_absoluteX="133dp" />
-
-    <EditText
-        android:id="@+id/editTextRank"
-        android:layout_width="93dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:hint="Rank"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/textcategory"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRank" />
-
-    <TextView
-        android:id="@+id/textcategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:text="Choose Category"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/categoryspinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRank" />
-
-    <Spinner
-        android:id="@+id/categoryspinner"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:spinnerMode="dropdown"
-
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textcategory" />
-
-    <Button
-        android:id="@+id/fistnextbtn"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:text="Next"
-        android:textSize="25sp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="520dp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textExamType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Exam Type"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    tools:layout_editor_absoluteX="112dp"
+                    tools:layout_editor_absoluteY="126dp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="152dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    tools:layout_editor_absoluteX="146dp"
+                    tools:layout_editor_absoluteY="163dp">
+
+                    <RadioButton
+                        android:id="@+id/jeemainsbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioBtnClicked"
+                        android:text="JEE Mains" />
+
+                    <RadioButton
+                        android:id="@+id/jeeadvancedbnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioBtnClicked"
+                        android:text="JEE Advanced" />
+                </RadioGroup>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textRank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expected Rank"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    tools:layout_editor_absoluteX="127dp"
+                    tools:layout_editor_absoluteY="434dp" />
+
+                <EditText
+                    android:id="@+id/editTextRank"
+                    android:layout_width="93dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:hint="Rank"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="159dp"
+                    tools:layout_editor_absoluteY="471dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/textcategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Category"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    tools:layout_editor_absoluteX="121dp"
+                    tools:layout_editor_absoluteY="320dp" />
+
+                <Spinner
+                    android:id="@+id/categoryspinner"
+                    android:layout_width="145dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:spinnerMode="dropdown"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    tools:layout_editor_absoluteX="133dp"
+                    tools:layout_editor_absoluteY="360dp" />
+
+                <Button
+                    android:id="@+id/firstnextbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:text="Next" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
