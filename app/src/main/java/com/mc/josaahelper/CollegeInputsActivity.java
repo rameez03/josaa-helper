@@ -1,10 +1,8 @@
 package com.mc.josaahelper;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,7 +14,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.mc.josaahelper.databinding.FragmentCollegePridictorSecondBinding;
 
 public class CollegeInputsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     //private RadioGroup radioGroup;
@@ -35,32 +32,27 @@ public class CollegeInputsActivity extends AppCompatActivity implements AdapterV
 
         ranktext = (EditText)findViewById(R.id.editTextRank);
         Toast.makeText(this, ranktext.getText(), Toast.LENGTH_SHORT).show();
-        nextBtn = (Button)findViewById(R.id.fistnextbtn);
+        nextBtn = (Button)findViewById(R.id.firstnextbtn);
 
-        spinner = findViewById(R.id.categoryspinner);
+        spinner = (Spinner) findViewById(R.id.categoryspinner);
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,R.array.categories,android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(this);
         //Log.i("Rank",mrank);
         nextBtn.setOnClickListener(new View.OnClickListener() {
-            //String mrank = ranktext.getText().toString();
-            //Log.i("RANK",mrank);
             @Override
             public void onClick(View view) {
                 mrank = ranktext.getText().toString();
                 Log.i("Rank",mrank);
-                if(view.getId()==R.id.fistnextbtn && radiobtn && ranktext.getText().toString()!="")
+                if(view.getId()==R.id.firstnextbtn && radiobtn && ranktext.getText().toString()!="")
                 {
+                    Intent intent = new Intent(CollegeInputsActivity.this,CollegeInputSecond.class);
                     bundle.putString("Exam",mexam);
                     bundle.putString("Rank",ranktext.getText().toString());
                     bundle.putString("Category",mcategory);
-
-                    CollegePridictorSecondFragment fragment = new CollegePridictorSecondFragment();
-                    fragment.setArguments(bundle);
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.collegePridictorFirstPage,fragment);
-                    transaction.commit();
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }
                 else
                 {
@@ -84,16 +76,16 @@ public class CollegeInputsActivity extends AppCompatActivity implements AdapterV
                     radiobtn = true;
                     mexam = "Jee Mains";
                 }
-                    Log.i("Exam Type","Jee Mains");
-                    break;
+                Log.i("Exam Type","Jee Mains");
+                break;
             case R.id.jeeadvancedbnt:
                 if (checked)
                 {
                     mexam = "Jee Advance";
                     radiobtn = true;
                 }
-                    Log.i("Exam Type","Jee Advance");
-                    break;
+                Log.i("Exam Type","Jee Advance");
+                break;
         }
     }
 
