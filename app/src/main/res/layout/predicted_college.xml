@@ -9,11 +9,13 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="#09532F"
+        android:padding="5dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,10 +23,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintsLayout1"
-            android:layout_width="401dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="#A2D3BB">
+            android:layout_width="412dp"
+            android:layout_height="177dp">
 
             <TextView
                 android:id="@+id/branch"
@@ -45,10 +45,11 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="20dp"
-                android:background="#EAE2A2"
+                android:background="#22675E"
                 android:gravity="center"
                 android:text="College Name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#F6FBF7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,12 +59,12 @@
                 android:id="@+id/openRank1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
                 android:text="Open Rank"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.974"
+                app:layout_constraintHorizontal_bias="0.975"
                 app:layout_constraintStart_toEndOf="@+id/openRank"
                 app:layout_constraintTop_toBottomOf="@+id/branch" />
 
@@ -91,7 +92,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/openRank1"
                 app:layout_constraintTop_toBottomOf="@+id/openRank1"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.058" />
 
             <TextView
                 android:id="@+id/closeRank"
@@ -103,15 +104,13 @@
                 app:layout_constraintBaseline_toBaselineOf="@+id/closeRank1"
                 app:layout_constraintEnd_toEndOf="@+id/openRank"
                 app:layout_constraintStart_toStartOf="@+id/openRank" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="175dp" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

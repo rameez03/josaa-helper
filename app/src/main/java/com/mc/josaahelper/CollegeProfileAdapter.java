@@ -28,21 +28,21 @@ public class CollegeProfileAdapter extends RecyclerView.Adapter<CollegeProfileAd
 
     @Override
     public void onBindViewHolder(@NonNull CollegeViewHolder holder, int position) {
-        holder.instituteIDTV.setText(mCollegeList.get(holder.getAdapterPosition()).getInstituteID());
-        holder.instituteNameTV.setText(mCollegeList.get(holder.getAdapterPosition()).getInstituteName());
+        holder.instituteIDTV.setText(mCollegeList.get(holder.getAdapterPosition()).getsNo());
+        holder.instituteNameTV.setText(mCollegeList.get(holder.getAdapterPosition()).getInstituteCodeAndName());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mCollegeList.size();
     }
 
     public static class CollegeViewHolder extends RecyclerView.ViewHolder{
         TextView instituteIDTV, instituteNameTV;
-        public CollegeViewHolder(@NonNull View v){
-            super(v);
-            instituteIDTV = v.findViewById(R.id.collegeListID);
-            instituteNameTV = v.findViewById(R.id.collegeListName);
+        public CollegeViewHolder(@NonNull View itemView){
+            super(itemView);
+            instituteIDTV = itemView.findViewById(R.id.collegeListID);
+            instituteNameTV = itemView.findViewById(R.id.collegeListName);
         }
     }
 }

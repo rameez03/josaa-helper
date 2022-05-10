@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Chance of College</string>
-    <string name="cse">Computer Science and Engineering</string>
+    <string name="cse">Computer Science</string>
     <string name="ce">Civil Engineering</string>
     <string name="ee">Electrical Engineering</string>
     <string name="ece">Electronics and Communication Engineering</string>
@@ -8,22 +8,54 @@
     <string name="ae">Aerospace Engineering</string>
     <string name="che">Chemical Engineering</string>
     <string name="bt">Bio Technology</string>
-    <string name="it">Information Technology</string>
     <string name="btbe">Biotechnology and Biochemical Engineering</string>
-    <string name="aiads">Artificial Intelligence and Data Science</string>
+    <string name="aplg">Applied Geology</string>
+    <string name="arch">Architecture</string>
+    <string name="argf">Agricultural and Food Engineering</string>
+    <string name="ai1">Artificial Intelligence</string>
+    <string name="bio">Bio Engineering</string>
+    <string name="biomed">Biomedical Engineering</string>
+    <string name="chem">Chemistry</string>
+    <string name="cpe">Computational Engineering</string>
+    <string name="ceramic">Ceramic Engineering</string>
+    <string name="ds">Data Science and Engineering</string>
+    <string name="es">Earth Sciences</string>
+    <string name="ecomics">Economics</string>
+    <string name="ene">Energy Engineering</string>
+    <string name="enp">Engineering Physics</string>
+    <string name="evs">Environmental Science and Engineering</string>
+    <string name="it">Information Technology</string>
+    <string name="inds">Industrial and Systems Engineering</string>
+    <string name="integ">Integrated B. Tech.(IT) and M. Tech (IT)</string>
+    <string name="inse">Instrumentation Engineering</string>
+    <string name="ls">Life Science</string>
+    <string name="math">Mathematics</string>
+    <string name="manf">Manufacturing Science and Engineering</string>
+    <string name="met">Metallurgical and Materials Engineering</string>
+    <string name="mining">Mining Engineering</string>
+    <string name="ple">Petroleum Engineering</string>
+    <string name="pharma">Pharmaceutical Engineering</string>
+    <string name="plan">Planning</string>
+    <string name="texttile">Textile Technology</string>
+
 
     <string name="open">OPEN</string>
     <string name="ews">EWS</string>
     <string name="obcncl">OBC-NCL</string>
     <string name="sc">SC</string>
     <string name="st">ST</string>
+    <string name="openpwd">OPEN (PwD)</string>
+    <string name="ewspwd">EWS (PwD)</string>
+    <string name="obcnclpwd">OBC-NCL (PwD)</string>
+    <string name="scpwd">SC (PwD)</string>
+    <string name="stpwd">ST (PwD)</string>
 
     <string name="ai">AI</string>
     <string name="hs">HS</string>
     <string name="os">OS</string>
 
-    <string name="neutral">Neutral</string>
-    <string name="female">Female</string>
+    <string name="neutral">Gender-Neutral</string>
+    <string name="female">Female-only (including Supernumerary)</string>
 
     <string name="jeemains">Jee Mains</string>
     <string name="jeeadvance">Jee Advance</string>
@@ -35,6 +67,11 @@
         <item>@string/obcncl</item>
         <item>@string/sc</item>
         <item>@string/st</item>
+        <item>@string/openpwd</item>
+        <item>@string/ewspwd</item>
+        <item>@string/obcnclpwd</item>
+        <item>@string/scpwd</item>
+        <item>@string/stpwd</item>
     </string-array>
 
     <string-array name="branch">
@@ -45,10 +82,36 @@
         <item>@string/me</item>
         <item>@string/ae</item>
         <item>@string/che</item>
-        <item>@string/aiads</item>
         <item>@string/bt</item>
-        <item>@string/it</item>
         <item>@string/btbe</item>
+        <item>@string/aplg</item>
+        <item>@string/arch</item>
+        <item>@string/argf</item>
+        <item>@string/ai1</item>
+        <item>@string/bio</item>
+        <item>@string/biomed</item>
+        <item>@string/chem</item>
+        <item>@string/cpe</item>
+        <item>@string/ceramic</item>
+        <item>@string/ds</item>
+        <item>@string/es</item>
+        <item>@string/ecomics</item>
+        <item>@string/ene</item>
+        <item>@string/enp</item>
+        <item>@string/evs</item>
+        <item>@string/it</item>
+        <item>@string/inds</item>
+        <item>@string/integ</item>
+        <item>@string/inse</item>
+        <item>@string/ls</item>
+        <item>@string/math</item>
+        <item>@string/manf</item>
+        <item>@string/met</item>
+        <item>@string/mining</item>
+        <item>@string/ple</item>
+        <item>@string/pharma</item>
+        <item>@string/plan</item>
+        <item>@string/texttile</item>
     </string-array>
 
     <string-array name="quota">
