@@ -2,7 +2,10 @@ package com.mc.josaahelper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class RankOutputsActivity extends AppCompatActivity {
@@ -10,6 +13,7 @@ public class RankOutputsActivity extends AppCompatActivity {
     private int mMarks, mintcategory;
     private TextView mExamTV, mCategoryTV, mMarksTV, mOpenMarksTV, mCategoryMarksTV, mObcMarksTV, mSCMarksTV, mSTMarksTV, mEWSMarksTV;
     private int mObcRank, mScRank, mSTRank, mEwsRank;
+    Button sharebtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,7 @@ public class RankOutputsActivity extends AppCompatActivity {
         mCategoryTV = findViewById(R.id.textView12);
         mMarksTV = findViewById(R.id.textView13);
         mCategoryMarksTV = findViewById(R.id.textView18);
+        sharebtn=findViewById(R.id.sharebtn);
 
         mExamTV.setText(mExamType);
         mCategoryTV.setText(mCategory);
@@ -66,7 +71,23 @@ public class RankOutputsActivity extends AppCompatActivity {
             mCategoryMarksTV.setText(String.valueOf(mEwsRank));
 
         }
+        sharebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String message="COfC RANK PREDICTOR : \nHere are your predictions --\nYou have provided the inputs as:\n    Exam type : "+mExamType+
+                        "\n    Category : "+ mCategory + "\n   Expected Marks : " + mMarks+"\n    Your expected Rank : " + MYRANK;
+                Intent intent=new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT,message);
+                intent.setType("text/plain");
+                startActivity(Intent.createChooser(intent,"Share to"));
+
+            }
+        });
     }
+
+
+
 
 
 }
