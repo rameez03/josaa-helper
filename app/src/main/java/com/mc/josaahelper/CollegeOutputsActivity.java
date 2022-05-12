@@ -86,17 +86,19 @@ public class CollegeOutputsActivity extends AppCompatActivity {
                 });
     }
 
-    /*public void getData()
-    {
-        db.collection("ORCR1").get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+    private void showData() {
+    db.collection("ORCR1")
+            .get()
+            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
                         coDetails.clear();
-                        for(DocumentSnapshot snapshot : task.getResult()){
-                            *//*if(snapshot.getString("exam").equals((String)exam.getText())  && snapshot.getString("gender").equals((String)gender.getText()) &&
+                        for (QueryDocumentSnapshot snapshot : task.getResult()) {
+                            if(snapshot.getString("exam").equals((String)exam.getText())  && snapshot.getString("gender").equals((String)gender.getText()) &&
                                     snapshot.getString("seatType").equals(bundle.getString("Category")) && snapshot.getString("quota").equals(bundle.getString("Quota")) &&
                                     Integer.parseInt((String)rank.getText()) <= Integer.parseInt(snapshot.getString("closingRank")) && Integer.parseInt((String) rank.getText()) >= Integer.parseInt(snapshot.getString("openingRank"))){
+                                Log.d("CollegeOutputActivity", snapshot.getString("exam"));
                                 String a = snapshot.getString("academicProgramName");
                                 String b = (String)branch.getText();
                                 Set<String> words = new HashSet<>(Arrays.asList(a.toLowerCase().split("\\s+")));
@@ -108,66 +110,13 @@ public class CollegeOutputsActivity extends AppCompatActivity {
                                             , snapshot.getString("quota"));
                                     coDetails.add(cod);
                                 }
-                            }*//*
+                            };
                         }
+                        collegeAdapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(CollegeOutputsActivity.this, "Error getting documents.", Toast.LENGTH_SHORT).show();
                     }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // if we do not get any data or any error we are displaying
-                // a toast message that we do not get any data
-                Toast.makeText(CollegeOutputsActivity.this, "Fail to get the data.", Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
-        private void showData() {
-        db.collection("ORCR1")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            coDetails.clear();
-                            for (QueryDocumentSnapshot snapshot : task.getResult()) {
-                                if(snapshot.getString("exam").equals((String)exam.getText())  && snapshot.getString("gender").equals((String)gender.getText()) &&
-                                        snapshot.getString("seatType").equals(bundle.getString("Category")) && snapshot.getString("quota").equals(bundle.getString("Quota")) &&
-                                        Integer.parseInt((String)rank.getText()) <= Integer.parseInt(snapshot.getString("closingRank")) && Integer.parseInt((String) rank.getText()) >= Integer.parseInt(snapshot.getString("openingRank"))){
-                                    Log.d("CollegeOutputActivity", snapshot.getString("exam"));
-                                    String a = snapshot.getString("academicProgramName");
-                                    String b = (String)branch.getText();
-                                    Set<String> words = new HashSet<>(Arrays.asList(a.toLowerCase().split("\\s+")));
-                                    Set<String>words1 = new HashSet<>(Arrays.asList(b.toLowerCase().split("\\s+")));
-                                    words.retainAll(words1);
-                                    if(words.size()>=2 || (words.size()==1 && words.contains("engineering")==false)){
-                                        CollegeDetails cod = new CollegeDetails(snapshot.getString("institute"),snapshot.getString("academicProgramName"),snapshot.getString("seatType"),
-                                                snapshot.getString("exam"),snapshot.getString("gender"),Integer.parseInt(snapshot.getString("openingRank")),Integer.parseInt(snapshot.getString("closingRank"))
-                                                , snapshot.getString("quota"));
-                                        coDetails.add(cod);
-                                    }
-                                };
-                            }
-                            collegeAdapter.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(CollegeOutputsActivity.this, "Error getting documents.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
-
-
-        /*Collections.sort(coDetails, new Comparator<CollegeDetails>() {
-            @Override
-            public int compare(CollegeDetails a, CollegeDetails b) {
-                if (a.getCloserank()<= b.getCloserank()) {
-                    return -1;
-                } else {
-                    return 1;
                 }
-            }
-        });
-        Log.d("GetData","Get Data");
-    }*/
-
-
-
+            });
+    }
 }

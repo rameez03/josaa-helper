@@ -37,7 +37,6 @@ public class CollegeInputsActivity extends AppCompatActivity implements AdapterV
 
         nextBtn.setOnClickListener(view -> {
             mrank = ranktext.getText().toString();
-            Log.i("Rank",mrank);
             if(view.getId()==R.id.firstnextbtn && radiobtn && !ranktext.getText().toString().equals(""))
             {
                 Intent intent = new Intent(CollegeInputsActivity.this,CollegeInputSecond.class);
