@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JosaaHelper">
         <activity
+            android:name=".DetailCollegeActivity"
+            android:exported="false" />
+        <activity
             android:name=".CollegeInputSecond"
             android:exported="false" />
         <activity
