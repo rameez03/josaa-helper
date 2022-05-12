@@ -1,23 +1,17 @@
 package com.mc.josaahelper;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -36,7 +30,6 @@ public class CollegeOutputsActivity extends AppCompatActivity {
     private CollegeAdapter collegeAdapter;
     private Bundle bundle;
     private FirebaseFirestore db;
-    private CollectionReference docRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +40,9 @@ public class CollegeOutputsActivity extends AppCompatActivity {
         branch = findViewById(R.id.selectedBranch1);
         gender = findViewById(R.id.selectedGender1);
         exam = findViewById(R.id.selectedExam1);
-        //FirebaseApp.initializeApp(CollegeOutputsActivity.this);
-        //FirebaseApp app = FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
-        docRef = db.collection("ORCR1");
 
         bundle = getIntent().getExtras();
-        //Bundle bundle = getIntent().getExtras();
         rank.setText(bundle.getString("Rank"));
         branch.setText(bundle.getString("Branch"));
         gender.setText(bundle.getString("Gender"));
@@ -62,66 +51,19 @@ public class CollegeOutputsActivity extends AppCompatActivity {
         Log.d("OnCreate","On Create");
         recyclerView = findViewById(R.id.collegeRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        //getData();
-        //getData2();
         showData();
         collegeAdapter = new CollegeAdapter(coDetails);
         recyclerView.setAdapter(collegeAdapter);
     }
 
-    private void getData2() {
-        db.collection("JOSSA_INSTITUTE")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("CollegeOutputActivity", document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.d("CollegeOutputActivity", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-    }
-
-    /*public void getData()
-    {
-        db.collection("ORCR1").get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        coDetails.clear();
-                        for(DocumentSnapshot snapshot : task.getResult()){
-                            *//*if(snapshot.getString("exam").equals((String)exam.getText())  && snapshot.getString("gender").equals((String)gender.getText()) &&
-                                    snapshot.getString("seatType").equals(bundle.getString("Category")) && snapshot.getString("quota").equals(bundle.getString("Quota")) &&
-                                    Integer.parseInt((String)rank.getText()) <= Integer.parseInt(snapshot.getString("closingRank")) && Integer.parseInt((String) rank.getText()) >= Integer.parseInt(snapshot.getString("openingRank"))){
-                                String a = snapshot.getString("academicProgramName");
-                                String b = (String)branch.getText();
-                                Set<String> words = new HashSet<>(Arrays.asList(a.toLowerCase().split("\\s+")));
-                                Set<String>words1 = new HashSet<>(Arrays.asList(b.toLowerCase().split("\\s+")));
-                                words.retainAll(words1);
-                                if(words.size()>=2 || (words.size()==1 && words.contains("engineering")==false)){
-                                    CollegeDetails cod = new CollegeDetails(snapshot.getString("institute"),snapshot.getString("academicProgramName"),snapshot.getString("seatType"),
-                                            snapshot.getString("exam"),snapshot.getString("gender"),Integer.parseInt(snapshot.getString("openingRank")),Integer.parseInt(snapshot.getString("closingRank"))
-                                            , snapshot.getString("quota"));
-                                    coDetails.add(cod);
-                                }
-                            }*//*
-                        }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // if we do not get any data or any error we are displaying
-                // a toast message that we do not get any data
-                Toast.makeText(CollegeOutputsActivity.this, "Fail to get the data.", Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
-        private void showData() {
+    private void showData() {
+        //CollectionReference orcr1=;
         db.collection("ORCR1")
+                .whereEqualTo("exam", exam.getText())
+                .whereEqualTo("gender", gender.getText())
+                .whereEqualTo("seatType", (String)bundle.getString("Category"))
+                .whereEqualTo("quota", (String)bundle.getString("Quota"))
+                //.orderBy("exam")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -129,33 +71,40 @@ public class CollegeOutputsActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             coDetails.clear();
                             for (QueryDocumentSnapshot snapshot : task.getResult()) {
-                                if(snapshot.getString("exam").equals((String)exam.getText())  && snapshot.getString("gender").equals((String)gender.getText()) &&
-                                        snapshot.getString("seatType").equals(bundle.getString("Category")) && snapshot.getString("quota").equals(bundle.getString("Quota")) &&
-                                        Integer.parseInt((String)rank.getText()) <= Integer.parseInt(snapshot.getString("closingRank")) && Integer.parseInt((String) rank.getText()) >= Integer.parseInt(snapshot.getString("openingRank"))){
-                                    Log.d("CollegeOutputActivity", snapshot.getString("exam"));
+                                Log.d("CollegeOutputActivity", snapshot.getString("exam")+" "+ snapshot.getString("seatType")+" "+ snapshot.getString("gender"));
+                                Log.d("CollegeOutputActivity",exam.getText().toString()+" "+bundle.getString("Category")+" "+gender.getText().toString());
+                                Log.d("CollegeOutputActivity",snapshot.getString("quota")+" "+snapshot.getString("openingRank")+" "+snapshot.getString("closingRank"));
+                                Log.d("CollegeOutputActivity",bundle.getString("Quota")+" "+ rank.getText().toString());
+                                if(rank.getText().toString().compareTo(snapshot.getString("closingRank"))<=0) {
                                     String a = snapshot.getString("academicProgramName");
-                                    String b = (String)branch.getText();
+                                    Log.d("CollegeActivity", snapshot.getString("academicProgramName") + " " + branch.getText().toString());
+                                    String b = (String) branch.getText();
                                     Set<String> words = new HashSet<>(Arrays.asList(a.toLowerCase().split("\\s+")));
-                                    Set<String>words1 = new HashSet<>(Arrays.asList(b.toLowerCase().split("\\s+")));
+                                    Set<String> words1 = new HashSet<>(Arrays.asList(b.toLowerCase().split("\\s+")));
                                     words.retainAll(words1);
-                                    if(words.size()>=2 || (words.size()==1 && words.contains("engineering")==false)){
-                                        CollegeDetails cod = new CollegeDetails(snapshot.getString("institute"),snapshot.getString("academicProgramName"),snapshot.getString("seatType"),
-                                                snapshot.getString("exam"),snapshot.getString("gender"),Integer.parseInt(snapshot.getString("openingRank")),Integer.parseInt(snapshot.getString("closingRank"))
+                                    if (words.size() >= 2 || (words.size() == 1 && words.contains("engineering") == false)) {
+                                        String openrank = snapshot.getString("openingRank");
+                                        String closerank = snapshot.getString("closingRank");
+                                        if(closerank.charAt(closerank.length()-1)=='P')
+                                        {
+                                            openrank = openrank.substring(0,openrank.length()-1);
+                                            closerank= closerank.substring(0,closerank.length()-1);
+                                        }
+                                        CollegeDetails cod = new CollegeDetails(snapshot.getString("institute"), snapshot.getString("academicProgramName"), snapshot.getString("seatType"),
+                                                snapshot.getString("exam"), snapshot.getString("gender"), Integer.parseInt(openrank), Integer.parseInt(closerank)
                                                 , snapshot.getString("quota"));
                                         coDetails.add(cod);
                                     }
-                                };
+                                }
                             }
                             collegeAdapter.notifyDataSetChanged();
-                        } else {
+                        }else {
+                            Log.d("CollegeOutputActivity","Error getting documents");
                             Toast.makeText(CollegeOutputsActivity.this, "Error getting documents.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-    }
-
-
-        /*Collections.sort(coDetails, new Comparator<CollegeDetails>() {
+        Collections.sort(coDetails, new Comparator<CollegeDetails>() {
             @Override
             public int compare(CollegeDetails a, CollegeDetails b) {
                 if (a.getCloserank()<= b.getCloserank()) {
@@ -166,8 +115,5 @@ public class CollegeOutputsActivity extends AppCompatActivity {
             }
         });
         Log.d("GetData","Get Data");
-    }*/
-
-
-
+    }
 }

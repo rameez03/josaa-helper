@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "579799045956",
+    "firebase_url": "https://josahelper-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "josahelper",
     "storage_bucket": "josahelper.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:579799045956:android:cb132748e8362e06d6e911",
+        "mobilesdk_app_id": "1:579799045956:android:76d00b7c7e4d4971d6e911",
         "android_client_info": {
           "package_name": "com.mc.josaahelper"
         }

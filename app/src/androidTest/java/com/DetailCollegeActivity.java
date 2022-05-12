@@ -1,9 +1,11 @@
-package com.mc.josaahelper;
+package com;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.mc.josaahelper.R;
 
 public class DetailCollegeActivity extends AppCompatActivity {
     private TextView collegename,detail;
