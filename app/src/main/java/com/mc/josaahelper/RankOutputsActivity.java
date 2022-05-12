@@ -74,7 +74,7 @@ public class RankOutputsActivity extends AppCompatActivity {
         sharebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message="COfC RANK PREDICTOR : \nHere are your predictions --\nYou have provided the inputs as:\n    Exam type : "+mExamType+
+                String message="COfC RANK PREDICTOR : \nHere are your predictions:\n    Exam type : "+mExamType+
                         "\n    Category : "+ mCategory + "\n   Expected Marks : " + mMarks+"\n    Your expected Rank : " + MYRANK;
                 Intent intent=new Intent();
                 intent.setAction(Intent.ACTION_SEND);
