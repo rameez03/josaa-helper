@@ -20,9 +20,6 @@
             android:name=".CollegeProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".CollegeProfileOutput"
-            android:exported="false" />
-        <activity
             android:name=".CollegeOutputsActivity"
             android:exported="false" />
         <activity

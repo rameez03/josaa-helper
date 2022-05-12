@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class RankOutputsActivity extends AppCompatActivity {
     private String mExamType, mCategory;
     private int mMarks, mintcategory;
-    private TextView mExamTV, mCategoryTV, mMarksTV, mOpenMarksTV, mCategoryMarksTV, mObcMarksTV, mSCMarksTV, mSTMarksTV, mEWSMarksTV;
+    private TextView mExamTV, mCategoryTV, mMarksTV, mOpenMarksTV, mCategoryMarksTV;
     private int mObcRank, mScRank, mSTRank, mEwsRank;
     Button sharebtn;
     @Override
