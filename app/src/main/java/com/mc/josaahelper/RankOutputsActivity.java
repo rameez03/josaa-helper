@@ -13,7 +13,9 @@ public class RankOutputsActivity extends AppCompatActivity {
     private int mMarks, mintcategory;
     private TextView mExamTV, mCategoryTV, mMarksTV, mOpenMarksTV, mCategoryMarksTV;
     private int mObcRank, mScRank, mSTRank, mEwsRank;
-    Button sharebtn;
+    Button sharebtn, clgactivitybtn;
+    public Bundle bundle = new Bundle();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class RankOutputsActivity extends AppCompatActivity {
         mMarksTV = findViewById(R.id.textView13);
         mCategoryMarksTV = findViewById(R.id.textView18);
         sharebtn=findViewById(R.id.sharebtn);
+        clgactivitybtn = findViewById(R.id.clgbtn);
 
         mExamTV.setText(mExamType);
         mCategoryTV.setText(mCategory);
@@ -84,10 +87,17 @@ public class RankOutputsActivity extends AppCompatActivity {
 
             }
         });
+
+        clgactivitybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RankOutputsActivity.this, CollegeInputSecond.class);
+                bundle.putString("Exam", mExamType);
+                bundle.putString("Rank", String.valueOf(MYRANK));
+                bundle.putString("Category", mCategory);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
-
-
-
-
-
 }
